@@ -1,54 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 body {
+  --color-primary: hsl(0, 100%, 74%);
+  --color-primary-dark: hsl(154, 59%, 51%);
+  --color-accent: hsl(248, 32%, 49%);
+  --color-neutral: hsl(249, 10%, 26%);
+  --color-neutral-secondary: hsl(246, 25%, 77%);
+  --border-radius: 6px;
+
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   background-image: url(./images/bg-intro-desktop.png);
-  background-color: hsl(0, 100%, 74%);
+  background-size: cover;
+  background-color: var(--color-primary);
   color: white;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   margin: auto;
-  height: 80vh;
   border: 5px solid #ffff00;
 }
 
-.heading-container {
+.heading__container {
   border: 3px solid green;
 }
 
-.signup-container {
-  border: 3px solid blue;
+.form__container {
   text-align: center;
 }
 
-.signup-heading {
-  background-color: hsl(248, 32%, 49%);
+.form__heading {
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin: auto;
 }
 
-input {
-  width: calc(100% - 200px);
-  padding: 0.7em;
-  margin-bottom: 0.5rem;
-}
-
-button {
-  width: calc(100% - 200px);
-  padding: 0.7em;
-  border: 0;
-  background-color: hsl(154, 59%, 51%);
-  color: white;
-}
-
-form {
-  overflow: hidden;
+.form {
+  width: 400px;
+  max-width: 400px;
   background: white;
   border: 1px solid #c1c1c1;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
+  margin: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgb(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+}
+.form__input {
+  width: 100%;
+  padding: 0.75rem;
+  display: block;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-neutral-secondary);
+  outline: none;
+  transition: background 0.2s, border-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.form__input:focus {
+  border-color: var(--color-accent);
+}
+
+.form__button {
+  width: calc(100% - 200px);
+  height: 50px;
+  padding: 0.7em;
+  border: 0;
+  background-color: var(--color-primary-dark);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form__text {
+  color: hsl(246, 25%, 77%);
+  font-size: 10px;
+  margin-bottom: 0;
 }
