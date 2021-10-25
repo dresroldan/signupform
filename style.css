@@ -70,7 +70,7 @@ main {
   border-radius: var(--border-radius);
 }
 
-.form {
+form {
   padding: 25px;
   text-align: center;
   background: white;
@@ -79,7 +79,7 @@ main {
   border-radius: var(--border-radius);
 }
 
-.form__input {
+input {
   width: 100%;
   padding: 20px;
   margin-bottom: 1rem;
@@ -92,20 +92,20 @@ main {
   font-weight: var(--font-weight);
 }
 
-.form__input:focus {
+input:focus {
   border-color: var(--blue);
 }
 
-.form__input--error {
+.error {
   color: var(--red);
   border-color: var(--red);
 }
 
-.form__input-error-message {
+/* .form__input-error-message {
   color: var(--red);
   margin-top: 0.5rem;
   font-size: 0.85rem;
-}
+} */
 
 .form__button {
   width: 100%;
@@ -158,7 +158,6 @@ main {
     font-size: 50px;
     text-align: left;
   }
-
   .subheading {
     text-align: left;
   }
