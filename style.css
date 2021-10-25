@@ -1,90 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-body {
-  --color-primary: hsl(0, 100%, 74%);
-  --color-primary-dark: hsl(154, 59%, 51%);
-  --color-accent: hsl(248, 32%, 49%);
-  --color-neutral: hsl(249, 10%, 26%);
-  --color-neutral-secondary: hsl(246, 25%, 77%);
-  --border-radius: 6px;
-
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-  background-image: url(./images/bg-intro-desktop.png);
-  background-size: cover;
-  background-color: var(--color-primary);
-  color: white;
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --darkBlue: hsl(249, 10%, 26%);
+  --grayBlue: hsl(246, 25%, 77%);
+  --border-radius: 7px;
+  --box-shadow: 0 6px rgba(0, 0, 0, 0.2);
+  --font-weight: 600;
 }
 
-.container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 16px;
+  height: 100vh;
+  color: white;
+  background-color: var(--red);
+  background-size: cover;
+  background-image: url(./images/bg-intro-mobile.png);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: auto;
-  border: 5px solid #ffff00;
+  max-width: 1200px;
 }
 
 .heading__container {
-  border: 3px solid green;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.heading {
+  font-size: 40px;
+  line-height: 56px;
+  margin-bottom: 25px;
+  margin-top: 16px;
+}
+
+.subheading {
+  line-height: 25px;
+  opacity: 0.9;
 }
 
 .form__container {
-  text-align: center;
+  padding: 20px;
 }
 
-.form__heading {
-  background-color: var(--color-accent);
-  border-radius: 5px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  width: 400px;
-  margin: auto;
+.form__pricing {
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--blue);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
 }
 
 .form {
-  width: 400px;
-  max-width: 400px;
+  padding: 25px;
+  text-align: center;
   background: white;
   border: 1px solid #c1c1c1;
-  margin: 1rem;
-  padding: 2rem;
-  box-shadow: 0 0 40px rgb(0, 0, 0, 0.5);
+  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
 }
+
 .form__input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 20px;
+  margin-bottom: 1rem;
+  outline: none;
   display: block;
   box-sizing: border-box;
+  border: 1px solid var(--grayBlue);
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-neutral-secondary);
-  outline: none;
   transition: background 0.2s, border-color 0.2s;
-  margin-bottom: 1rem;
+  font-weight: var(--font-weight);
 }
 
 .form__input:focus {
-  border-color: var(--color-accent);
+  border-color: var(--blue);
+}
+
+.form__input--error {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.form__input-error-message {
+  color: var(--red);
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
 }
 
 .form__button {
-  width: calc(100% - 200px);
-  height: 50px;
-  padding: 0.7em;
-  border: 0;
-  background-color: var(--color-primary-dark);
+  width: 100%;
+  padding: 20px;
   color: white;
-  border-radius: 5px;
+  border: none;
+  outline: none;
   cursor: pointer;
+  background-color: var(--green);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px hsl(154, 59%, 41%);
+  letter-spacing: 1px;
+}
+
+.form__button:hover {
+  background: hsl(154, 59%, 71%);
+}
+
+.form__button:active {
+  transform: scale(0.98);
 }
 
 .form__text {
-  color: hsl(246, 25%, 77%);
   font-size: 10px;
-  margin-bottom: 0;
+  color: hsl(246, 25%, 77%);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form__text-terms {
+  color: var(--red);
+  font-weight: var(--font-weight);
+  text-decoration: none;
+}
+
+.form__text-terms:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 640px) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heading {
+    font-size: 50px;
+    text-align: left;
+  }
+
+  .subheading {
+    text-align: left;
+  }
 }
