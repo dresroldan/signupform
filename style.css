@@ -98,14 +98,23 @@ input:focus {
 
 .error {
   color: var(--red);
-  border-color: var(--red);
+  border: 1px solid var(--red);
+  background: url('./images/icon-error.svg') no-repeat;
+  background-position: 95% 50%;
 }
 
-/* .form__input-error-message {
+.error-message {
+  font-size: 12px;
+  font-size: italic;
+  margin-left: auto;
+  margin-top: -15px;
+  margin-bottom: 20px;
   color: var(--red);
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-} */
+}
+
+.success {
+  border: 1px solid var(--green);
+}
 
 .form__button {
   width: 100%;
