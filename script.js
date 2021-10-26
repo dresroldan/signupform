@@ -1,26 +1,38 @@
 const form = document.getElementById('form');
-const fname = document.getElementById('firstname');
-const lname = document.getElementById('lastname');
-const email = document.getElementById('email');
-const password = document.getElementById('password');
+const firstNameEl = document.getElementById('firstname');
+const lastNameEl = document.getElementById('lastname');
+const emailEl = document.getElementById('email');
+const passwordEl = document.getElementById('password');
 
-// form fields and submit event listener
+const checkFirstName = () => {
+  let firstName = firstNameEl.value.trim();
 
-form.addEventListener('submit', function (e) {
-  // prevent the form from submitting
-  e.preventDefault();
+  let valid = false;
 
-  let firstName = fname.value.trim();
-  let lastName = fname.value.trim();
-  let email = fname.value.trim();
-  let password = fname.value.trim();
-
-  if (firstName === '') {
-    showError(fname, 'First Name cannot be empty');
+  if (!isRequired(firstName)) {
+    showError(firstNameEl, 'First name cannot be blank.');
   } else {
-    showSuccess(fname);
+    showSuccess(firstNameEl);
+    valid = true;
   }
-});
+  return valid;
+};
+
+const checkLastName = () => {
+  let lastName = lastNameEl.value.trim();
+
+  let valid = false;
+
+  if (!isRequired(lastName)) {
+    showError(lastNameEl, 'First name cannot be blank.');
+  } else {
+    showSuccess(lastNameEl);
+    valid = true;
+  }
+  return valid;
+};
+
+const isRequired = (value) => (value === '' ? false : true);
 
 // showError() highlights the border of the input field and displays an error message if the input field is invalid:
 
@@ -28,15 +40,33 @@ const showError = (input, message) => {
   const formField = input.parentElement;
   const span = formField.querySelector('span');
 
+  // show the error message
   span.innerText = message;
-
   span.classList.add('error-message');
+  // add the error class
   input.classList.add('error');
 };
 
 // showSuccess() removes the error class, adds the success class, and set the error message to blank.
 
 const showSuccess = (input) => {
+  const formField = input.parentElement;
+
+  // remove the error class
   input.classList.remove('error');
   input.classList.add('success');
+
+  // hide the error message
+  const error = formField.querySelector('span');
+  error.textContent = '';
 };
+
+// form submit event listener
+
+form.addEventListener('submit', function (e) {
+  // prevent the form from submitting
+  e.preventDefault();
+
+  let isFirstNameValid = checkFirstName();
+  let isLastNameValid = checkLastName();
+});
