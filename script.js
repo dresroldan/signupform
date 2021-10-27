@@ -32,10 +32,37 @@ const checkLastName = () => {
   return valid;
 };
 
+const checkEmail = () => {
+  let email = emailEl.value.trim();
+
+  let valid = false;
+
+  if (!isRequired(email)) {
+    showError(emailEl, 'First name cannot be blank.');
+  } else {
+    showSuccess(emailEl);
+    valid = true;
+  }
+  return valid;
+};
+
+const checkPassword = () => {
+  let password = passwordEl.value.trim();
+
+  let valid = false;
+
+  if (!isRequired(password)) {
+    showError(passwordEl, 'First name cannot be blank.');
+  } else {
+    showSuccess(passwordEl);
+    valid = true;
+  }
+  return valid;
+};
+
 const isRequired = (value) => (value === '' ? false : true);
 
 // showError() highlights the border of the input field and displays an error message if the input field is invalid:
-
 const showError = (input, message) => {
   const formField = input.parentElement;
   const span = formField.querySelector('span');
@@ -48,7 +75,6 @@ const showError = (input, message) => {
 };
 
 // showSuccess() removes the error class, adds the success class, and set the error message to blank.
-
 const showSuccess = (input) => {
   const formField = input.parentElement;
 
@@ -69,4 +95,6 @@ form.addEventListener('submit', function (e) {
 
   let isFirstNameValid = checkFirstName();
   let isLastNameValid = checkLastName();
+  let isPasswordValid = checkPassword();
+  let isEmailValid = checkEmail();
 });
