@@ -47,13 +47,14 @@ form.addEventListener('submit', function (e) {
 // showError() highlights the border of the input field and displays an error message if the input field is invalid:
 const showError = (input, message) => {
   const formField = input.parentElement;
-  const span = formField.querySelector('span');
+
+  // add the error class
+  formField.classList.remove('success');
+  formField.classList.add('error');
 
   // show the error message
-  span.innerText = message;
-  span.classList.add('error-message');
-  // add the error class
-  input.classList.add('error');
+  const error = formField.querySelector('span');
+  error.textContent = message;
 };
 
 // showSuccess() removes the error class, adds the success class, and set the error message to blank.
@@ -61,8 +62,8 @@ const showSuccess = (input) => {
   const formField = input.parentElement;
 
   // remove the error class
-  input.classList.remove('error');
-  input.classList.add('success');
+  formField.classList.remove('error');
+  formField.classList.add('success');
 
   // hide the error message
   const error = formField.querySelector('span');
