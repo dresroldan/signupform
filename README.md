@@ -1,6 +1,6 @@
 # Frontend Mentor - Intro component with sign up form solution
 
-This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -25,17 +25,17 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Receive an error message when the `form` is submitted if:
-  - Any `input` field is empty. The message for this error should say *"[Field Name] cannot be empty"*
-  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Looks like this is not an email"*
+  - Any `input` field is empty. The message for this error should say _"[Field Name] cannot be empty"_
+  - The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say _"Looks like this is not an email"_
 
 ### Screenshot
 
 ![](./images/screenshot.png)
 
-
 ### Links
 
 <!-- - Solution URL: [Add solution URL here](https://your-solution-url.com) -->
+
 - Live Site URL: [https://dresroldan.github.io/signupform/](https://dresroldan.github.io/signupform/)
 
 ## My process
@@ -47,11 +47,9 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- Javascript 
-
+- Javascript
 
 ### What I learned
-
 
 ```css
 :root {
@@ -65,17 +63,16 @@ Users should be able to:
   --font-weight: 600;
 }
 ```
-A custom property is most commonly thought of as a variable in CSS. They help follow the DRY programming principle. 
 
+A custom property is most commonly thought of as a variable in CSS. They help follow the DRY programming principle.
 
-<!-- ### Continued development
+### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect. -->
-
+To develop this component even further, I would like to add an instant feedback feature to let users know if their input values are valid as the user finishes typing. Currently the form only shows the error or success after the user clicks on the claim your free trial button. An event listener would need to be attached to the input event of each field to validate the user's entries.
 
 ### Useful resources
 
-- [Javascript Form Validation](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/) - This helped me understand form validation using Javascript. HTML5 has built in validation features but isn't as customizable as Javascript validation. 
+- [Javascript Form Validation](https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/) - This helped me understand form validation using Javascript. HTML5 has built in validation features but isn't as customizable as Javascript validation.
 
 ## Author
 
