@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="img/png" sizes="32x32" href="./images/favicon-32x32.png">
 <title>Frontend Mentor | Intro component with sign-up form</title>
 <link rel="stylesheet" href="./style.css">
 </link>
@@ -19,24 +20,27 @@
                 invaluable
             </p>
         </div>
-
         <div class="form__container">
             <p class="form__pricing"><strong>Try it free 7 days </strong>then $20/mo. thereafter</p>
             <form action="#" id=form>
-                <div>
+                <div class="form__control">
                     <input type="text" id="firstname" autofocus placeholder="First Name" />
+                    <img src="./images/icon-error.svg" alt="error-icon"></img>
                     <span></span>
                 </div>
-                <div>
+                <div class="form__control">
                     <input type="text" id="lastname" autofocus placeholder="Last Name" name="lastname" />
+                    <img src="./images/icon-error.svg" alt="error-icon"></img>
                     <span></span>
                 </div>
-                <div>
+                <div class="form__control">
                     <input type="text" id="email" autofocus placeholder="Email Address" name="email" />
+                    <img src="./images/icon-error.svg" alt="error-icon"></img>
                     <span></span>
                 </div>
-                <div>
+                <div class="form__control">
                     <input type="password" id="password" autofocus placeholder="Password" name="password" />
+                    <img src="./images/icon-error.svg" alt="error-icon"></img>
                     <span></span>
                 </div>
                 <button class="form__button">CLAIM YOUR FREE TRIAL</button>
