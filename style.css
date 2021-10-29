@@ -20,20 +20,21 @@
 
 body {
   font-size: 16px;
-  height: 100vh;
   color: white;
   background-color: var(--red);
   background-size: cover;
   background-image: url(./images/bg-intro-mobile.png);
   display: flex;
-  text-align: center;
-  align-items: center;
   justify-content: center;
 }
 
 main {
   display: grid;
+  justify-content: center;
   max-width: 1200px;
+  align-items: center;
+
+  height: 100vh;
 }
 
 .heading__container {
